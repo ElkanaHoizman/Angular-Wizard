@@ -1,0 +1,16 @@
+<button mat-raised-button (click)='isOptional = !isOptional'>
+  {{!isOptional ? 'Enable optional steps' : 'Disable optional steps'}}
+</button>
+
+<mat-horizontal-stepper #stepper>
+
+    <mat-step label="Details">
+        <app-details [stepper]="stepper"></app-details>
+    </mat-step>
+    <mat-step label="goods">
+        <app-goods [stepperGoods]="stepper"></app-goods>
+    </mat-step>
+
+    <mat-step label="Summary">
+        <app-summary [stepperSummary]="stepper"></app-summary>
+    </mat-step>
