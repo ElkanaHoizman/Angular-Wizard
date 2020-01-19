@@ -1,0 +1,22 @@
+<button (click)='summary()' mat-button>To view the summary click here</button>
+
+<div class='wrapper'>
+
+    <div *ngFor='let detail of details' class='details'>
+        <p *ngIf="detail.firstName">{{detail.firstName}} <button class='item' mat-button (click)='move(0)' stepperSummary>Edit</button></p>
+        <p>{{detail.lastName}} <button class='item' mat-button (click)='move(0)' stepperSummary>Edit</button></p>
+        <p *ngIf="detail.telephone">{{detail.telephone}} <button class='item' mat-button (click)='move(0)' stepperSummary>Edit</button></p>
+        <p>{{detail.phone}} <button class='item' mat-button (click)='move(0)' stepperSummary>Edit</button></p>
+        <p>{{detail.id}} <button class='item' mat-button (click)='move(0)' stepperSummary>Edit</button></p>
+
+    </div>
+
+    <div *ngFor='let good of goods' class='goods'>
+        <p *ngIf="good.origins">{{good.origins}} <button class='item' mat-button (click)='move(1)' stepperSummary>Edit</button></p>
+        <p *ngIf="good.passages">{{good.passages}} <button class='item' mat-button (click)='move(1)' stepperSummary>Edit</button></p>
+        <p *ngIf="good.categories">{{good.categories}} <button class='item' mat-button (click)='move(1)' stepperSummary>Edit</button></p>
+        <p *ngIf="good.unitMeasures">{{good.unitMeasures}} <button class='item' mat-button (click)='move(1)' stepperSummary>Edit</button></p>
+        <p *ngIf="good.ingredients">{{good.ingredients}} <button class='item' mat-button (click)='move(1)' stepperSummary>Edit</button></p>
+
+    </div>
+</div>

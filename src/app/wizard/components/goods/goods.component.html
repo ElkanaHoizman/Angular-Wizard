@@ -1,0 +1,63 @@
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <label for="origins">
+        <input [(ngModel)]="goods.origins"  type="text" placeholder="Origins" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto" >
+        </label>
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let origin of originsOptions | async" [value]="origin">
+                {{origin}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+        <label for="passages">
+        <input [(ngModel)]="goods.passages"  type="text" placeholder="Passages" aria-label="Number" matInput [formControl]="myControl"  [matAutocomplete]="autoNationality" >
+        </label>
+        <mat-autocomplete #autoNationality="matAutocomplete">
+            <mat-option *ngFor="let passages of passagesOptions | async" [value]="passages">
+                {{passages}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+        <label for="categories">
+        <input [(ngModel)]="goods.categories"  type="text" placeholder="Categories" aria-label="Number" matInput [formControl]="myControl"  [matAutocomplete]="first" >
+        </label>
+        <mat-autocomplete #first="matAutocomplete">
+            <mat-option *ngFor="let categories of CategoriesOptions | async" [value]="categories">
+                {{categories}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+        <label for="categories">
+        <input [(ngModel)]="goods.unitMeasures"  type="text" placeholder="unitMeasure" aria-label="Number" matInput [formControl]="myControl"  [matAutocomplete]="second" >
+        </label>
+        <mat-autocomplete #second="matAutocomplete">
+            <mat-option *ngFor="let measures of unitMeasuresOptions | async" [value]="measures">
+                {{measures}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+        <label for="categories">
+        <input [(ngModel)]="goods.ingredients"  type="text" placeholder="Ingredients" aria-label="Number" matInput [formControl]="myControl"  [matAutocomplete]="third" >
+        </label>
+        <mat-autocomplete #third="matAutocomplete">
+            <mat-option *ngFor="let Ingredient of IngredientsOptions | async" [value]="Ingredients">
+                {{Ingredient}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+
+
+</form>
+
+
+<button mat-button matStepperPrevious>Back</button>
+
+<button mat-button (click)="sendGoods()">Next</button>

@@ -1,0 +1,19 @@
+.container {
+    width: 980px;
+    margin: 50px auto;
+}
+
+.basic-container {
+    padding: 50px;
+    margin: 100px;
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        max-width: 768px;
+        margin: 50px auto;
+    }
+    .basic-container {
+        margin: unset;
+    }
+}
