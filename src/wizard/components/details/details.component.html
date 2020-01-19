@@ -1,0 +1,45 @@
+<form>
+    <ng-template matStepLabel>Details</ng-template>
+    <div class='form'>
+        <mat-form-field>
+            <label for="firstName">
+            <input name="firstName" #firstName="ngModel" [(ngModel)]="user.firstName" matInput placeholder=' First name' />
+            </label>
+        </mat-form-field>
+
+        <mat-form-field>
+            <label for="lastName">
+            <input name="lastName" #lastName="ngModel" [(ngModel)]="user.lastName" matInput placeholder=' Last Name' required />
+            </label>
+        </mat-form-field>
+        <span class="error" *ngIf="lastName.invalid && lastName.touched && lastName?.errors.required">Please enter your  last name</span>
+
+        <mat-form-field>
+            <label for="telephone">
+            <input name="telephone" #telephone="ngModel" [(ngModel)]="user.telephone" matInput placeholder=' telephone' />
+            </label>
+        </mat-form-field>
+        <span class="error" #errorTelephone [hidden]='telephone.value === "" '></span>
+    </div>
+    <div class='form'>
+        <mat-form-field>
+            <label for="phone">
+
+            <input name="phone" #phone="ngModel" [(ngModel)]="user.phone" matInput placeholder=' phone' required />
+            </label>
+        </mat-form-field>
+        <span class="error" *ngIf="phone.invalid && phone.touched && phone?.errors.required">Please enter your  phone</span>
+        <span class="error" #errorPhone [hidden]="phone.invalid && phone.touched && phone?.errors.required "></span>
+
+        <mat-form-field>
+            <label for="id">
+            <input name="id" #id="ngModel" [(ngModel)]="user.id" type='text' matInput placeholder='id' required />
+            </label>
+        </mat-form-field>
+        <span class="error" *ngIf="id.invalid && id.touched && id?.errors.required">Enter an ID</span>
+        <span class="error" #errorID [hidden]="id.invalid && id.touched && id?.errors.required"></span>
+        <div>
+            <button mat-button (click)="sendDetails()">Next</button>
+        </div>
+    </div>
+</form>
