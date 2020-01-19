@@ -3,9 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
 
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css']
+  selector: "app-main",
+  templateUrl: "./main.component.html",
+  // styleUrls: ["./main.component.scss"]
 })
 export class MainComponent implements OnInit {
   detailsGroup: FormGroup;
@@ -14,6 +14,4 @@ export class MainComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit() {}
-
-
 }

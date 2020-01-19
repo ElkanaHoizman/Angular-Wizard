@@ -8,7 +8,7 @@ import { GoodsService } from "../../services/goods.service";
 @Component({
   selector: "app-goods",
   templateUrl: "./goods.component.html",
-  styleUrls: ["./goods.component.scss"]
+  // styleUrls: ["./goods.component.scss"]
 })
 export class GoodsComponent implements OnInit {
   @Input() stepperGoods;
